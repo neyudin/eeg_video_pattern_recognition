@@ -1,0 +1,22 @@
+#!/bin/sh
+RS232=/dev/ttyUSB0
+#RS232=/dev/ttyS0
+
+stty -F $RS232 57600
+#For native RS232 port.
+stty -F $RS232 cstopb
+#For usb RS232 port.
+stty -F $RS232 -cstopb
+stty -F $RS232 cs8
+stty -F $RS232 raw
+stty -F $RS232 -parenb
+#stty -F $RS232 -parodd
+#stty -F $RS232 icanon 
+stty -F $RS232 onlret
+stty -F $RS232 -echo
+
+cat $RS232 &
+trap 'killall cat' EXIT INT
+sleep 1
+cat >$RS232
+#picocom --noinit $RS232

@@ -1,0 +1,15 @@
+    /*
+    argv[1] = devname: "/dev/ttyUSB0"
+    argv[2] = baud_rate: 57600
+    argv[3] = opt_parity: 0
+    argv[4] = opt_csize: 8
+    argv[5] = opt_flow: 0
+    argv[6] = opt_stop: 2
+    argv[7] = radius: 26.5
+    */
+    /*
+    CKNetSerial serial("/dev/ttyUSB0", serial_port_base::baud_rate(57600), 
+        serial_port_base::parity(0), 
+        serial_port_base::character_size(8), 
+        serial_port_base::flow_control(0), serial_port_base::stop_bits(2), 26.5);
+    */
